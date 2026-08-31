@@ -1,7 +1,6 @@
-using GameStore.Api.Endpoints;
-
 var builder = WebApplication.CreateBuilder(args);
 //swagger
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -18,10 +17,6 @@ app.UseSwaggerUI(x =>
     x.DefaultModelExpandDepth(-1);
 });
 
-
-
-
-app.MapGamesEndpoints();
-
+app.MapControllers();
 
 app.Run();
