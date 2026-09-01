@@ -27,6 +27,13 @@ coverage/
 *.coverage
 *.coveragexml
 
+# SQLite local database files (schema lives in Migrations/)
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
 # Logs and local environment files
 *.log
 .env
@@ -36,4 +43,6 @@ coverage/
 # OS-generated files
 .DS_Store
 Thumbs.db
+
+
 

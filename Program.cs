@@ -1,3 +1,5 @@
+using GameStore.Api.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 //swagger
 builder.Services.AddControllers();
@@ -6,6 +8,9 @@ builder.Services.AddSwaggerGen();
 
 // dotNet 10 later
 //builder.Services.AddValidation();
+
+const string connString = "Data Source=GameStore.db;";
+builder.Services.AddSqlite<GameStoreContext>(connString);
 
 var app = builder.Build();
 
@@ -18,5 +23,6 @@ app.UseSwaggerUI(x =>
 });
 
 app.MapControllers();
+app.MigrateDb();
 
 app.Run();
