@@ -1,5 +1,6 @@
 using GameStore.Api.Data;
 using GameStore.Api.Endpoints;
+using GameStore.Api.Endpoints.GenreEndpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 //swagger
@@ -26,6 +27,7 @@ app.UseSwaggerUI(x =>
 });
 
 app.MapGamesEndpoints();
+app.MapGenresEndpoints();
 
 app.MapControllers();
 app.MigrateDb();

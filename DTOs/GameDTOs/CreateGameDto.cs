@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GameStore.Api.DTOs;
+namespace GameStore.Api.DTOs.GameDTOs;
 
 public record CreateGameDto(
     [property: Required] string Name,
