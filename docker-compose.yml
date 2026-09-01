@@ -1,0 +1,15 @@
+services:
+  gamestore-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ConnectionStrings__GameStore: "Data Source=/app/data/GameStore.db"
+    volumes:
+      - gamestore-data:/app/data
+
+volumes:
+  gamestore-data:

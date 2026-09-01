@@ -9,7 +9,9 @@ builder.Services.AddSwaggerGen();
 // dotNet 10 later
 //builder.Services.AddValidation();
 
-const string connString = "Data Source=GameStore.db;";
+var connString = builder.Configuration.GetConnectionString("GameStore")
+                 ?? throw new InvalidOperationException(
+                     "Connection string 'GameStore' was not found in configuration.");
 builder.Services.AddSqlite<GameStoreContext>(connString);
 
 var app = builder.Build();
