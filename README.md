@@ -17,6 +17,10 @@ A small game-store REST API built with .NET 8 Minimal APIs, Entity Framework Cor
 
 Docker is optional and only required for the containerized setup.
 
+## Continuous integration
+
+GitHub Actions runs the build workflow for pushes and pull requests targeting the `main` or `master` branch. The workflow installs .NET 8, restores NuGet dependencies, and builds the solution in Release configuration.
+
 ## Run locally
 
 ```bash
@@ -109,4 +113,3 @@ Migrations/           EF Core migrations and seed data
 Models/               Game and genre entities
 Program.cs            Application configuration and startup
 ```
-
