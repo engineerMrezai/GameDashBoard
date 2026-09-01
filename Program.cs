@@ -1,4 +1,5 @@
 using GameStore.Api.Data;
+using GameStore.Api.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 //swagger
@@ -23,6 +24,8 @@ app.UseSwaggerUI(x =>
     x.InjectStylesheet("/swagger-ui.css");
     x.DefaultModelExpandDepth(-1);
 });
+
+app.MapGamesEndpoints();
 
 app.MapControllers();
 app.MigrateDb();
